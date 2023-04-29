@@ -2,4 +2,6 @@ import Calendar from "@/common/Calendar";
 
 const calendar = new Calendar();
 
-console.log(calendar.lunar2solar(1996, 4, 23));
+let str = calendar.lunar2solar(2023, 2, 1, true);
+
+console.log("str", str);

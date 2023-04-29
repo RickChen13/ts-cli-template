@@ -887,10 +887,10 @@ class Calendar {
    * @param dPara  solar day
    * @eg:console.log(calendar.solar2lunar(1987,11,01));
    */
-  solar2lunar(yPara: string, mPara: string, dPara: string): false | DayInfo {
-    let y = parseInt(yPara);
-    let m = parseInt(mPara);
-    let d = parseInt(dPara);
+  solar2lunar(yPara: number, mPara: number, dPara: number): false | DayInfo {
+    let y = parseInt(String(yPara));
+    let m = parseInt(String(mPara));
+    let d = parseInt(String(dPara));
     //年份限定、上限
     if (y < 1900 || y > 2100) {
       return false; // undefined转换为数字变为NaN
@@ -1131,7 +1131,7 @@ class Calendar {
     const cM = calObj.getUTCMonth() + 1;
     const cD = calObj.getUTCDate();
 
-    return this.solar2lunar(String(cY), String(cM), String(cD));
+    return this.solar2lunar(cY, cM, cD);
   }
 }
 
